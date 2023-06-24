@@ -33,7 +33,7 @@ spiciest_foods spicy_foods
 # "hello" * 3 == "hellohellohello"
 def print_spicy_foods(spicy_foods)
   spicy_foods.each do |food|
-    print "#{food[:name]} (#{food[:cuisine]}) | Heat Level: #{'🌶' * food[:heat_level]}"
+  "#{food[:name]} (#{food[:cuisine]}) | Heat Level: #{'🌶' * food[:heat_level]}"
   end
 end
 
@@ -67,7 +67,7 @@ def print_spiciest_foods(spicy_foods)
   # your code here
   high_heat_level = spicy_foods.filter {|food| food[:heat_level] > 5}
 
-  print high_heat_level.map {|food| 
+  high_heat_level.map {|food| 
     "#{food[:name]} (#{food[:cuisine]}) | Heat Level: #{'🌶 ' * food[:heat_level]}" 
   }
 end
@@ -85,3 +85,35 @@ end
 
 
 average_heat_level spicy_foods
+
+contacts = {
+  "Jon Snow" => {
+    name: "Jon",
+    email: "jon_snow@thewall.we",
+    favorite_ice_cream_flavors: ["chocolate", "vanilla", "mint chip"],
+    knows: nil
+  },
+  "Freddy Mercury" => {
+    name: "Freddy",
+    email: "freddy@mercury.com",
+    favorite_ice_cream_flavors: ["strawberry", "cookie dough", "mint chip"]
+  }
+}
+
+contacts.each do |person, data| 
+  # puts "#{person} : #{data}"
+  email =[]
+  
+  data.each do |attribute, value|
+    # puts "#{attribute}:#{value}"
+    # if attribute == :favorite_ice_cream_flavors
+    #   value.each do |flavor|
+    #     puts "#{flavor}"
+    #   end
+    # end
+    if attribute == :email
+      email << value
+    end   
+   end
+   puts email
+end
